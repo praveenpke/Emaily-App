@@ -56,7 +56,7 @@ app.get('/api/logout',(request,response)=>{
 mongoose.connect(keys.mongoDbURI);
 
 //dynamic port binding
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 //changing port based on production(remote)or development(local) envirnomnet
 
 //Listening to the client
