@@ -3,6 +3,8 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const keys = require('../config/keys');
 const mongoose = require('mongoose');
 
+
+
 //different way of importing mongoose models
 const User = mongoose.model('users');
 
@@ -34,11 +36,18 @@ passport.use(
         new User({googleId:profile.id})
             .save((error,result)=>{
                 if(error){
-                    console.log("Error During saving document in collection User",err.message);
+                    console.log("Error During saving document in collection User",error.message);
+                    
+                    //if user already signs up then we identify that user and attatch to passport as current user--signed in
+                    User.findOne({googleId:profile.id},(error,user)=>{
+                        done(null,user);  
+                    });
+                 
                 }else{
                     console.log("Stored Document in the User collection: ",result);
+                    done(null,result);
                 }
-                done(null,result); 
+               
             })
               //saying to passport that we are done with user authentication
     })

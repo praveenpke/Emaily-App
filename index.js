@@ -40,12 +40,16 @@ app.get('/',(request,response)=>{
 });
 
 
-
+//route handler to check whether cookie is set and passport is keep tracking it
 app.get('/api/current_user',(request,response)=>{
     response.send(request.user);
 });
 
-
+//Route handler for logout user
+app.get('/api/logout',(request,response)=>{
+    request.logout();    //passport destroys the user object stored currently in cookie
+    response.send(request.user);
+});
 
 
 //connecting to mongodb cloud mlab using mongoose driver library
