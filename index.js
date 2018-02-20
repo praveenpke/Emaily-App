@@ -11,7 +11,11 @@ app.get('/',(request,response)=>{
 
 
 
+//dynamic port binding
+const port = process.env.PORT || 3000;
+//changing port based on production(remote)or development(local) envirnomnet
+
 //Listening to the client
-app.listen(5000);
+app.listen(port);
 
 
