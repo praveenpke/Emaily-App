@@ -4,6 +4,8 @@ import {connect} from 'react-redux';    //connect function - ability to call act
 import * as actions from '../actions';
 
 import Header from './Header';
+import Landing from './Landing';
+
 
 const Dashboard = () => {
     return <h2>Dashboard</h2>
@@ -13,9 +15,7 @@ const SurveyNew = () => {
     return <h2>Survey New</h2>
 }
 
-const Landing = () => {
-    return <h2>Landing</h2>
-}
+
  
 
 

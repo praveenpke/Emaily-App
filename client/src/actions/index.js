@@ -6,7 +6,7 @@ import {FETCH_USER} from './types';
     
 export const  fetchUser = () => async (dispatch) =>
 {
-    const reponse =  await axios.get('/api/current_user')
+    const response =  await axios.get('/api/current_user')
         
     dispatch({
             type:FETCH_USER,
