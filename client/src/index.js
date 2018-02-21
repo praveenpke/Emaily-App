@@ -1,6 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+//importing material css file --webpack automatically detects css file when import into javascript file
+import 'materialize-css/dist/css/materialize.min.css';
+
+
+
 //redux tools imports
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
