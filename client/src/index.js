@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import reduxThunk from 'redux-thunk'; //useful for async actions made by axios
 
 //importing material css file --webpack automatically detects css file when import into javascript file
 import 'materialize-css/dist/css/materialize.min.css';
@@ -16,7 +17,7 @@ import reducers from './reducers';
 //React components imports
 import App from './components/App';
 
-const store = createStore(reducers,{},applyMiddleware());
+const store = createStore(reducers,{},applyMiddleware(reduxThunk));
 
 ReactDOM.render( 
     <Provider store={store}><App/></Provider>,
